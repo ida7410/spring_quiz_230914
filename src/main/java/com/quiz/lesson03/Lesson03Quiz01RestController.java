@@ -31,7 +31,8 @@ public class Lesson03Quiz01RestController {
 	
 	@RequestMapping("/3")
 	public List<RealEstate> quiz01_3(
-			@RequestParam("area") int area, @RequestParam("price") int price) {
+			@RequestParam("area") int area,
+			@RequestParam("price") int price) {
 		return realEstateBO.getRealEstateListByAreaAndPrice(area, price);
 	}
 	
