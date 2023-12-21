@@ -45,6 +45,7 @@ public interface RealEstateMapper {
 			,@Param("price") int price
 			,@Param("rentPrice") Integer rentPrice);
 	
+	
 	// 3-3-1
 	// input: int id, String type, int price
 	// ouput: 성공한 행의 개수 int
@@ -52,5 +53,11 @@ public interface RealEstateMapper {
 			@Param("id") int id
 			,@Param("type") String type
 			,@Param("price") int price);
+	
+	
+	// 3-4-1
+	// input: int id
+	// ouput: int 성공한 행의 개수
+	public int deleteRealEstateById(int id);
 	
 }

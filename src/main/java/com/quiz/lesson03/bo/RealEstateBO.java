@@ -61,4 +61,12 @@ public class RealEstateBO {
 		return realEstateMapper.updateRealEstateById(id, type, price);
 	}
 	
+	
+	// 3-4-1
+	// input: int id
+	// ouput: int 성공한 행의 개수
+	public int deleteRealEstateById(int id) {
+		return realEstateMapper.deleteRealEstateById(id);
+	}
+	
 }
