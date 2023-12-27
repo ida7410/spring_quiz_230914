@@ -6,7 +6,7 @@
 	<div class="d-flex justify-content-between mt-5">
 		<div class="d-flex align-items-center">
 			<div class="input-label">날짜</div>
-			<input type="text" class="form-control" id="date" name="date">
+			<input type="date" class="form-control" id="date" name="date">
 		</div>
 		<div class="d-flex align-items-center">
 			<div class="input-label">날씨</div>

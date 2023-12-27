@@ -39,10 +39,10 @@
 			</c:choose>
 			</td>
 			
-			<td>${weather.temperatures}</td>
-			<td>${weather.precipitation}</td>
+			<td>${weather.temperatures}℃</td>
+			<td>${weather.precipitation}mm</td>
 			<td>${weather.microDust}</td>
-			<td>${weather.windSpeed}</td>
+			<td>${weather.windSpeed}km/h</td>
 		</tr>
 		</c:forEach>
 	</tbody>
