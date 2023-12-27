@@ -1,7 +1,12 @@
 @charset "UTF-8";
 
-#wrap {background-color:gray;}
-.contents {height:500px;}
+#wrap {width:1200px}
+.contents {min-height:400px;}
+nav {width:220px; background-color:cornflowerblue;}
 footer {height:120px;}
 
-a, a:hover {text-decoration:none; color:white;}
+a, a:hover {text-decoration:none;}
+
+.nav-link, .logo {color:white;}
+
+.input-label{width:130px; text-align:right; margin-right:10px;}

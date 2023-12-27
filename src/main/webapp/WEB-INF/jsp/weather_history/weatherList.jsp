@@ -15,18 +15,18 @@
 <link rel="stylesheet" type="text/css" href="/css/weather_history/weather_history_stylesheet.css">
 </head>
 <body>
-	<div id="wrap" class="bg-secondary">
-		<div class="contents bg-warning d-flex">
-			<aside class="col-2 bg-info h-100">
+	<div id="wrap">
+		<div class="contents d-flex">
+			<nav>
 				<jsp:include page="nav.jsp" />
-			</aside>
+			</nav>
 			
-			<section class="content w-100 m-3">
+			<section class="content w-100 mx-5 my-4">
 				<jsp:include page="weatherListContent.jsp" />
 			</section>
 		</div>
 		
-		<footer class="bg-success d-flex align-items-center">
+		<footer class="d-flex align-items-center">
 			<jsp:include page="footer.jsp" />
 		</footer>
 	</div>

@@ -20,9 +20,9 @@ public class WeatherHistoryBO {
 		return weatherHistoryMapper.selectWeatherList();
 	}
 	
-	public void addWeather(String date, String weather, String temperature, 
-			String fineDust, double precipitaion, double wind) {
-		weatherHistoryMapper.insertWeather(date, weather, temperature, fineDust, precipitaion, wind);
+	public void addWeather(Date date, String weather, double temperatures, 
+			String microDust, double precipitation, double windSpeed) {
+		weatherHistoryMapper.insertWeather(date, weather, temperatures, microDust, precipitation, windSpeed);
 	}
 	
 }

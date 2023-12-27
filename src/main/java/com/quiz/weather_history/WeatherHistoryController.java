@@ -1,5 +1,7 @@
 package com.quiz.weather_history;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -36,16 +38,27 @@ public class WeatherHistoryController {
 	
 	@PostMapping("/add-weather")
 	public String addWeather(
-			@RequestParam("date") String date,
+			@RequestParam("date") String strDate,
 			@RequestParam("weather") String weather,
-			@RequestParam("temperature") String temperature,
-			@RequestParam("fineDust") String fineDust,
-			@RequestParam("precipitation") double precipitaion,
-			@RequestParam("wind") double wind) {
+			@RequestParam("temperatures") double temperatures,
+			@RequestParam("microDust") String microDust,
+			@RequestParam("precipitation") double precipitation,
+			@RequestParam("windSpeed") double windSpeed) {
+
+//		Date date = ParseDate
 		
-//		weatherHistoryBO.addWeather(date, weather, temperature, fineDust, precipitaion, wind);
-		
-		return "weather_history/weatherList";
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Date date = null;
+		try {
+			date = sdf.parse(strDate);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(date);
+		weatherHistoryBO.addWeather(date, weather, temperatures, microDust, precipitation, windSpeed);
+//		model.addAttribute("date", date);
+		return "redirect:/weather-history/weather-list-view";
 	}
 	
 	
