@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+#wrap {background-color:gray;}
+.contents {height:500px;}
+footer {height:120px;}
+
+a, a:hover {text-decoration:none; color:white;}

@@ -17,6 +17,7 @@
 <body>
 	<div class="container">
 		<h1>${title}</h1>
+		
 		<table class="table text-center">
 			<thead>
 				<tr>
