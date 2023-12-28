@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,26 +39,24 @@ public class WeatherHistoryController {
 	
 	@PostMapping("/add-weather")
 	public String addWeather(
-			@RequestParam("date") String strDate,
+			@RequestParam("date") @DateTimeFormat(pattern = "yyyy-MM-dd") Date date,
 			@RequestParam("weather") String weather,
 			@RequestParam("temperatures") double temperatures,
 			@RequestParam("microDust") String microDust,
 			@RequestParam("precipitation") double precipitation,
 			@RequestParam("windSpeed") double windSpeed) {
 
-//		Date date = ParseDate
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		Date date = null;
-		try {
-			date = sdf.parse(strDate);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		System.out.println(date);
+//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//		Date date = null;
+//		try {
+//			date = sdf.parse(strDate);
+//		} catch (ParseException e) {
+//			e.printStackTrace();
+//		}
+//		System.out.println(date);
 		weatherHistoryBO.addWeather(date, weather, temperatures, microDust, precipitation, windSpeed);
-//		model.addAttribute("date", date);
+
 		return "redirect:/weather-history/weather-list-view";
 	}
 	

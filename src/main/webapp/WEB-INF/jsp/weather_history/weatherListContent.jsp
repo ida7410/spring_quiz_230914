@@ -17,7 +17,7 @@
 	</thead>
 
 	<tbody>
-	<c:forEach items="${weatherList}" var="weather" varStatus="statuc">
+	<c:forEach items="${weatherList}" var="weather" varStatus="status">
 		<tr>
 			<td>
 				<fmt:formatDate value="${weather.date}" pattern="yyyy년 MM월 dd일" />

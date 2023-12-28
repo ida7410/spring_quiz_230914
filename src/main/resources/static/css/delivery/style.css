@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+#wrap {width:800px;}
+header {height:100px;}
+.contents {min-height:200px;}
+footer {height:100px;}
+
+.logo {font-weight:bold; color:white;}
+
+a, a:hover {text-decoration:none;}
+
+.store-item {color:black;}
+
+.menu {background-color:rgb(192, 192, 192); font-size:13px; padding:3px;}
