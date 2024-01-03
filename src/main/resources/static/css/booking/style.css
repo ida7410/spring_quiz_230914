@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+a {text-decoration:none;}
+.font-size-25 {font-size: 24px;}
+
+#wrap {width: 1200px; margin: 0 auto;}
+header {height: 80px;}
+nav {height: 40px;}
+.contents {height: 800px;}
+footer {height: 80px;}
+
+.menu .nav-item:hover {background-color: #fff;}
+
+.bannerSection {height: 500px;}
+.bookingSection {height: 300px;}
+
+#nonMemberInputs > * {display: none;}
+
+#foot {font-size: 12px;}
+

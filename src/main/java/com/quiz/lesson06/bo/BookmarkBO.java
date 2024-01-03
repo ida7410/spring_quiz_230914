@@ -1,12 +1,12 @@
-package com.quiz.test.temp.lesson06.bo;
+package com.quiz.lesson06.bo;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.quiz.test.temp.lesson06.domain.Bookmark;
-import com.quiz.test.temp.lesson06.mapper.BookmarkMapper;
+import com.quiz.lesson06.domain.Bookmark;
+import com.quiz.lesson06.mapper.BookmarkMapper;
 
 @Service
 public class BookmarkBO {
@@ -20,6 +20,15 @@ public class BookmarkBO {
 	
 	public void addBookmark(String name, String url) {
 		bookmarkMapper.insertBookmark(name, url);
+	}
+	
+	public boolean isDuplicatedByUrl(String url) {
+		List<Bookmark> bookmarkList = bookmarkMapper.selectBookmarkListByUrl(url);
+		return bookmarkList.isEmpty() ? false : true;
+	}
+	
+	public int deleteBookmarkById(int id) {
+		return bookmarkMapper.deleteBookmarkById(id);
 	}
 	
 }
