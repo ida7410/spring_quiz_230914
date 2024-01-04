@@ -78,7 +78,7 @@
 	<script>
             $(document).ready(function() {
             	$("#date").datepicker({
-                    dateFormat:"yyyy-mm-dd"
+                    dateFormat:"yy-mm-dd"
                     , minDate:0
                 });
             	
@@ -102,8 +102,16 @@
             			alert("숙박일수를 입력해주세요.");
             			return;
             		}
+            		if (isNaN(day)) {
+            			alert("숙박일수는 숫자만 입력 가능합니다.");
+            			return;
+            		}
             		if (!headcount) {
             			alert("숙박인원을 입력해주세요.");
+            			return;
+            		}
+            		if (isNaN(headcount)) {
+            			alert("숙박인원은 숫자만 입력 가능합니다.");
             			return;
             		}
             		if (!phoneNumber) {

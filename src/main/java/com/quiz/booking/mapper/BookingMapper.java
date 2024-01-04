@@ -13,7 +13,7 @@ public interface BookingMapper {
 	
 	public List<Booking> selectBookingList();
 	
-	public Booking selectBookingByNamePhoneNumber(
+	public Booking selectLatestBookingByNamePhoneNumber(
 			@Param("name") String name,
 			@Param("phoneNumber") String phoneNumber);
 	

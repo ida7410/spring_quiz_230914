@@ -141,11 +141,7 @@
 					
 					, success:function(data) {
 						if (data.code == 200) {
-							alert("이름 : " + data.name + 
-								  "\n날짜 : " + data.date + 
-								  "\n일수 : " + data.day + 
-								  "\n인원 : " + data.headcount + 
-								  "\n상태 : " + data.state);
+							alert(data.result);
 						}
 						else if (data.code == 201) {
 							alert(data.result);e

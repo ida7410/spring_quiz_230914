@@ -18,7 +18,7 @@
 			`booking`
 	</select>
 	
-	<select id="selectBookingByNamePhoneNumber" parameterType="map" resultType="com.quiz.booking.domain.Booking">
+	<select id="selectLatestBookingByNamePhoneNumber" parameterType="map" resultType="com.quiz.booking.domain.Booking">
 		SELECT
 			`id`
 			,`name`
@@ -34,6 +34,8 @@
 		WHERE
 			`name` = #{name} AND
 			`phoneNumber` = #{phoneNumber}
+		ORDER BY `id` DESC
+		LIMIT 1
 	</select>
 	
 	<insert id="insertBooking" parameterType="map">
@@ -56,7 +58,7 @@
 			,#{day}
 			,#{date}
 			,#{phoneNumber}
-			,#{state}
+			,'대기중'
 			,NOW()
 			,NOW()
 		)

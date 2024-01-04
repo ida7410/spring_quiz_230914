@@ -19,8 +19,8 @@ public class BookingBO {
 		return bookingMapper.selectBookingList();
 	}
 	
-	public Booking getBookingByNamePhoneNumber(String name, String phoneNumber) {
-		return bookingMapper.selectBookingByNamePhoneNumber(name, phoneNumber);
+	public Booking getLatestBookingByNamePhoneNumber(String name, String phoneNumber) {
+		return bookingMapper.selectLatestBookingByNamePhoneNumber(name, phoneNumber);
 	}
 	
 	public void addBooking(String name, Date date, int day, int headcount, String phoneNumber) {

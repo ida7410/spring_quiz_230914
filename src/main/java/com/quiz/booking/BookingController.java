@@ -94,25 +94,24 @@ public class BookingController {
 			@RequestParam("name") String name,
 			@RequestParam("phoneNumber") String phoneNumber) {
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd");
 		// db check
-		Booking booking = bookingBO.getBookingByNamePhoneNumber(name, phoneNumber);
+		Booking booking = bookingBO.getLatestBookingByNamePhoneNumber(name, phoneNumber);
 		
 		Map<String, Object> result = new HashMap<>();
+		result.put("code", 200);
 		if (booking == null) {
-			result.put("code", 201);
 			result.put("result", "예약 내역이 없습니다.");
 		}
 		else {
-			result.put("code", 200);
-			result.put("name", booking.getName());			
-			result.put("date", sdf.format(booking.getDate()));			
-			result.put("day", booking.getDay());			
-			result.put("headcount", booking.getHeadcount());			
-			result.put("phoneNumber", booking.getPhoneNumber());			
-			result.put("state", booking.getState());			
+			result.put("result",
+					"이름 : " + booking.getName() + 
+					"\n날짜 : " + sdf.format(booking.getDate()) + 
+					"\n일수 : " + booking.getDay() + 
+					"\n인원 : " + booking.getHeadcount() + 
+					"\n상태 : " + booking.getState());
+			
 		}
-		
 		return result;
 	}
 	
