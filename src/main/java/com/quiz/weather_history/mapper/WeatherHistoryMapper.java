@@ -3,10 +3,12 @@ package com.quiz.weather_history.mapper;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import com.quiz.weather_history.domain.Weather;
 
+@Mapper
 public interface WeatherHistoryMapper {
 	
 	public List<Weather> selectWeatherList();
