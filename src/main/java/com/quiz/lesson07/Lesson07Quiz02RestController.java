@@ -19,33 +19,38 @@ public class Lesson07Quiz02RestController {
 	private RecruitmentRepository recruitmentRepository;
 	
 	@GetMapping("/1")
-	public RecruitmentEntity findById() {
+	public RecruitmentEntity quiz02_1() {
 		return recruitmentRepository.findById(8).orElse(null);
 	}
 	
 	@GetMapping("/2")
-	public List<RecruitmentEntity> findByCompanyId(
+	public List<RecruitmentEntity> quiz02_2(
 			@RequestParam("companyId") int companyId) {
 		return recruitmentRepository.findByCompanyId(companyId);
 	}
 	
 	@GetMapping("/3")
-	public List<RecruitmentEntity> findByPositionAndType() {
+	public List<RecruitmentEntity> quiz02_3() {
 		return recruitmentRepository.findByPositionAndType("웹 back-end 개발자", "정규직");
 	}
 	
 	@GetMapping("/4")
-	public List<RecruitmentEntity> findByTypeOrSalary() {
+	public List<RecruitmentEntity> quiz02_4() {
 		return recruitmentRepository.findByTypeOrSalaryGreaterThanEqual("정규직", 9000);
 	}
 	
 	@GetMapping("/5")
-	public List<RecruitmentEntity> findTop3ByTypeByOrderBySalaryDesc() {
+	public List<RecruitmentEntity> quiz02_5() {
 		return recruitmentRepository.findTop3ByTypeOrderBySalaryDesc("계약직");
 	}
 	
 	@GetMapping("/6")
-	public List<RecruitmentEntity> findByRegionAndSalaryBetween() {
+	public List<RecruitmentEntity> quiz02_6() {
 		return recruitmentRepository.findByRegionAndSalaryBetween("성남시 분당구", 7000, 8500);
+	}
+	
+	@GetMapping("/7")
+	public List<RecruitmentEntity> quiz02_7() {
+		return recruitmentRepository.findByDeadlineSalaryTypec("2026-04-10", 8100, "정규직");
 	}
 }

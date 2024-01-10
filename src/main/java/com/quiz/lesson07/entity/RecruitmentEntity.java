@@ -1,7 +1,7 @@
 package com.quiz.lesson07.entity;
 
+import java.time.LocalDate;
 import java.time.ZonedDateTime;
-import java.util.Date;
 
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -45,7 +45,7 @@ public class RecruitmentEntity {
 	
 	private int salary;
 	
-	private Date deadline;
+	private LocalDate deadline;
 	
 	@UpdateTimestamp
 	@Column(name = "createdAt", updatable = false)
